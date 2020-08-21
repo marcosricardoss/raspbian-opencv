@@ -19,15 +19,13 @@ RUN apt-get install -y build-essential cmake pkg-config libjpeg-dev libtiff5-dev
                         libatlas-base-dev libblas-dev libeigen{2,3}-dev liblapack-dev \
                         gfortran \
                         python2.7-dev python3-dev python-pip python3-pip python python3
+
+# Python dependencies
+
 RUN pip2 install -U pip
 RUN pip3 install -U pip
 RUN pip2 install numpy
 RUN pip3 install numpy
-
-# Python dependencies
-
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install numpy
 
 # OpenCV building script
 
