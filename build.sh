@@ -45,4 +45,5 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D PYTHON_EXECUTABLE=$(which python2) \
       ..
 make -j "$NUM_JOBS"
+make install
 popd; popd
