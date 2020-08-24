@@ -16,7 +16,7 @@ RUN apt-get install -y devscripts debhelper cmake libldap2-dev libgtkmm-3.0-dev 
 RUN apt-get install -y build-essential cmake pkg-config libjpeg-dev libtiff5-dev libjasper-dev \
                         libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
                         libxvidcore-dev libx264-dev libgtk2.0-dev libgtk-3-dev \
-                        libatlas-base-dev libblas-dev libeigen{2,3}-dev liblapack-dev \
+                        libatlas-base-dev libblas-dev libeigen2-dev libeigen3-dev liblapack-dev \
                         gfortran \
                         python2.7-dev python3-dev python-pip python3-pip python python3
 
