@@ -3,7 +3,7 @@ services:
   opencv:
     container_name: opencv-example-2
     # image: marcosricardoss/raspbian-opencv:latest 
-    image: jumidlej/opencv:latest 
+    image: jumidlej/opencv:4.1.2
     command: python3 -u usr/src/app/app.py
     volumes:
       - './:/usr/src/app'
