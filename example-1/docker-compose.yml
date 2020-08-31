@@ -4,7 +4,7 @@ services:
     container_name: opencv-example-1
     build: .
     image: marcosricardoss/raspbian-opencv
-    command: python3 -u usr/src/app/app.py
+    command: python3.8 -u usr/src/app/app.py
     volumes:
       - './:/usr/src/app'
       - /tmp/.X11-unix:/tmp/.X11-unix
