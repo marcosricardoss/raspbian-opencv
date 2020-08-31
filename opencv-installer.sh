@@ -41,8 +41,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D ENABLE_VFPV3=ON \
       -D OPENCV_GENERATE_PKGCONFIG=YES \
       -D OPENCV_EXTRA_EXE_LINKER_FLAGS=-latomic \
-      -D PYTHON3_EXECUTABLE=$(which python3) \
-      -D PYTHON_EXECUTABLE=$(which python2) \
+      -D PYTHON3_EXECUTABLE=$(which python3.8)      
       ..
 make -j "$NUM_JOBS"
 make install
