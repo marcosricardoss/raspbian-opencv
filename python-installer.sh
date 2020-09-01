@@ -3,7 +3,8 @@ set -ex
 
 wget -O "python-${PYTHON_VERSION}.tar.gz" "https://www.python.org/ftp/python/3.8.0/Python-${PYTHON_VERSION}.tgz"
 tar -xvf "python-${PYTHON_VERSION}.tar.gz"
-pushd python-$PYTHON_VERSION
+# Troquei python por Python, estava dando erro no pushd para encontrar os arquivos
+pushd Python-$PYTHON_VERSION
 
 MEM="$(free -m | awk /Mem:/'{print $2}')"  # Total memory in MB
 # RPI 4 with 4GB RAM is actually 3906MB RAM after factoring in GPU RAM split.
@@ -18,4 +19,5 @@ fi
 make -j "$NUM_JOBS"
 make altinstall
 
-popd; popd
+# Tirei um popd, estava dando erro de pilha vazia
+popd
