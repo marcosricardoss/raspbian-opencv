@@ -13,6 +13,7 @@ services:
       - /dev/vcsm:/dev/vcsm # VideoCore Shared Memory (VCSM)
     environment:
       - DISPLAY=$DISPLAY
+    privileged: true
 
 # $DISPLAY environment varible and .X11 volume specify 
 # the Docker container to share the X11 socket and host display.
