@@ -1,5 +1,5 @@
 # FROM marcosricardoss/raspbian-opencv:latest 
-FROM jumidlej/opencv:4.1.2
+FROM jumidlej/opencv:python3.8
 
 USER root
 RUN apt-get -y install python3-tk
