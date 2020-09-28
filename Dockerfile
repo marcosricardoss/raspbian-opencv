@@ -2,6 +2,7 @@ FROM raspbian/fpixel
 
 USER root
 
+RUN apt-get remove -y --purge python3 
 RUN apt-get purge -y libreoffice*
 RUN apt-get clean
 RUN apt-get update
@@ -38,10 +39,8 @@ RUN apt-get install -y \
   libv4l-dev \
   libx264-dev \
   libxvidcore-dev \
-  pkg-config \
-  python3 \
-  python3-dev \  
-  python3-pip 
+  pkg-config \  
+  libraspberrypi-bin
 
 # Python 3.8 dependencies
 
