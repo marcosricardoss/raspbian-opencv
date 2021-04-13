@@ -6,18 +6,10 @@ tar -xvf "python-${PYTHON_VERSION}.tar.gz"
 # Troquei python por Python, estava dando erro no pushd para encontrar os arquivos
 pushd Python-$PYTHON_VERSION
 
-MEM="$(free -m | awk /Mem:/'{print $2}')"  # Total memory in MB
-# RPI 4 with 4GB RAM is actually 3906MB RAM after factoring in GPU RAM split.
-# We're probably good to go with `-j $(nproc)` with 3GB or more RAM.
-if [[ $MEM -ge 3000 ]]; then
-  NUM_JOBS=$(nproc)
-else
-  NUM_JOBS=1 # Earlier versions of the Pi don't have sufficient RAM to support compiling with multiple jobs.
-fi
+NUM_JOBS=$(nproc)
 
 ./configure --enable-optimizations
 make -j "$NUM_JOBS"
 make altinstall
 
-# Tirei um popd, estava dando erro de pilha vazia
 popd
