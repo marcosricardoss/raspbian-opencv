@@ -11,14 +11,8 @@ tar -xvf "opencv_contrib-${OPENCV_VERSION}.tar.gz"
 pushd opencv-$OPENCV_VERSION
 mkdir -p build
 pushd build
-MEM="$(free -m | awk /Mem:/'{print $2}')"  # Total memory in MB
-# RPI 4 with 4GB RAM is actually 3906MB RAM after factoring in GPU RAM split.
-# We're probably good to go with `-j $(nproc)` with 3GB or more RAM.
-if [[ $MEM -ge 3000 ]]; then
-  NUM_JOBS=$(nproc)
-else
-  NUM_JOBS=1 # Earlier versions of the Pi don't have sufficient RAM to support compiling with multiple jobs.
-fi
+
+NUM_JOBS=$(nproc)
 
 # -D ENABLE_PRECOMPILED_HEADERS=OFF
 # is a fix for https://github.com/opencv/opencv/issues/14868
